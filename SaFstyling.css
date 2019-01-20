@@ -26,12 +26,17 @@
 button[type="roll"]{ 
     border: none;
 	background-color: transparent;
+	background-Image: none;
+	box-shadow: none;
 	font-size: 12px;
-	margin-top: -1px;
+	margin-top: -3px;
 	cursor: pointer;
 	display: inline-block;
 	font: Arial;
 	align-content: center;
+	padding: 0px;
+    width: 75%;
+    overflow: hidden;
 }
 
 button[type=roll]::before
@@ -123,3 +128,5 @@ input.sheet-display{
 	min-width:50px;
 	max-width:300px;
 }
+
+
