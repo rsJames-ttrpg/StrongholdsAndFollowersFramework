@@ -66,6 +66,42 @@ textarea {
 .sheet-container {
     display: grid;
     grid-template-columns: 100px 100px 100px 100px;
-    grid-template-rows: 25px 25px;
+    grid-template-rows: 25px 0px;
 }
 
+input[type="number"]
+{
+	background: transparent;
+	border: none;
+	font-weight: bold;
+}
+
+.repcontainer[data-groupname="repeating_example"] > .repitem {
+    display: inline-block;
+}
+
+fieldset.sheet-display~.repcontrol{
+	display: none;
+}
+
+fieldset.sheet-display+.repcontainer .repitem{
+	background: transparent;
+	border: none;
+	display: inline-block;
+
+}
+input.sheet-traitName{
+	background: transparent;
+	border: none;
+	display: inline-block;
+	width:auto;
+	font-weight:bold;
+}
+
+input.sheet-traitDesc{
+	background: transparent;
+	border: none;
+	display: inline-block;
+	min-width:50px;
+	max-width:300px;
+}

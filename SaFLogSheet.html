@@ -1,91 +1,132 @@
 <div>
-                <input type='checkbox' class="sheet-editCheckBox" name='attr_editEnabled' value='1' checked='false' />
-                <div class="sheet-containerUnit">
-                        <div class="col">
-                                <input type="text" name="attr_character_name" />
-                                <div class="2colrow">
-                                        <div class="col">
-                                                <input type="text" name="attr_inputAncestry" placeholder="Ancestry" />
-                                                <input type="text" name="attr_inputEquipment" placeholder="Equipment" />
-                                        </div>
-                                        <div class="col">
-                                                <input type="text" name="attr_inputExperience" placeholder="Experience">
-                                                <input type="text" name="attr_inputType" placeholder="Type" />
-                                        </div>
+        <input type='checkbox' class="sheet-editCheckBox" name='attr_editEnabled' value='1' checked='false' />
+        <div class="sheet-containerUnit">
+                <div class="col">
+                        <input type="text" name="attr_character_name" />
+                        <div class="2colrow">
+                                <div class="col">
+                                        <input type="text" name="attr_inputAncestry" placeholder="Ancestry" />
+                                        <input type="text" name="attr_inputEquipment" placeholder="Equipment" />
                                 </div>
-                                <div></div>
-                                <div align="right">
-                                        <label>Cost:</label><input type="number" name="attr_cost" placeholder="-" />
+                                <div class="col">
+                                        <input type="text" name="attr_inputExperience" placeholder="Experience">
+                                        <input type="text" name="attr_inputType" placeholder="Type" />
                                 </div>
-                                <div class="2colrow">
-                                        <div class="col" align="right">
-                                                <label>Attack:</label><input type="number" name="attr_inputAttack" placeholder="-" />
-                                                <div></div>
-                                                <label>Power:</label><input type="number" name="attr_inputPower" placeholder="-" />
-                                                <div></div>
-                                                <label>Morale:</label><input type="number" name="attr_inputMorale" placeholder="-" />
-                                        </div>
-                                        <div class="col" align="right">
-                                                <label>Defense:</label><input type="number" name="attr_inputDefence"
-                                                        placeholder="-" />
-                                                <div></div>
-                                                <label>Toughness:</label><input type="number" name="attr_inputToughness"
-                                                        placeholder="-" />
-                                                <div></div>
-                                                <label>Size:</label><input type="number" name="attr_inputSize" placeholder="-" />
-                                        </div>
-                                </div>
-                                <h2>Traits</h2>
-                                <fieldset class="repeating_Traits">
-                                        <input type="text" class="traitName" name="attr_traitName" placeholder="Trait Name" />
-                                        <input type="text" call="traitDesc" style="resize:vertical;" name="attr_traitDesc"
-                                                placeholder="Description"></textarea>
-                                </fieldset>
-        
-                                <h2>Orders</h2>
-                                <fieldset class="repeating_Orders">
-                                        <input type="text" class="orderName" name="attr_orderName" placeholder="Order Name" />
-                                        <input type="text" class="orderDesc" style="resize:vertical;" name="attr_orderDesc"
-                                                placeholder="Description"></textarea>
-                                </fieldset>
                         </div>
-                </div>
-                <div class="sheet-containerStronghold">
-                        <h2><span name="attr_character_name"></span></h2>
-                        <hr>
-                        </hr>
-                        <h3><span name="attr_inputAncestry"></span><span display:inline-block;>&nbsp;</span><span name="attr_inputExperience">
-                                </span></h3>
-                        <h3><span name="attr_inputEquipment"></span><span display:inline-block;>&nbsp;</span><span name="attr_inputType">
-                        </h3>
-                        <h3><span>Cost:&nbsp;</span><span name="attr_cost">
-                                </span></h3>
-                        <hr></hr>
-                        <div class="sheet-container">
-                                <div><h3>Attack:</h3></div>
-                                <div><h3><span name="attr_inputAttack"></span></h3></div>
-                                <div><h3>Defence:</h3></div>
-                                <div><h3><span name="attr_inputDefence"></h3></div>
+                        <div></div>
+                        <div align="right">
+                                <label>Cost:</label><input type="number" name="attr_cost" placeholder="-" />
                         </div>
-                        <hr></hr>
-                        <div class="sheet-container">
-                                        <div><h3>Power:</h3></div>
-                                        <div><h3><span name="attr_inputPower"></span></h3></div>
-                                        <div><h3>Toughness:</h3></div>
-                                        <div><h3><span name="attr_inputToughness"></h3></div>
+                        <div class="2colrow">
+                                <div class="col" align="right">
+                                        <label>Attack:</label><input type="number" name="attr_inputAttack" placeholder="-" />
+                                        <div></div>
+                                        <label>Power:</label><input type="number" name="attr_inputPower" placeholder="-" />
+                                        <div></div>
+                                        <label>Morale:</label><input type="number" name="attr_inputMorale" placeholder="-" />
                                 </div>
-                        <hr></hr>
-                        <div class="sheet-container">
-                                        <div><h3>Morale:</h3></div>
-                                        <div><h3><span name="attr_inputMorale"></span></h3></div>
-                                        <div><h3>Size:</h3></div>
-                                        <div><h3><span name="attr_inputSize"></h3></div>
+                                <div class="col" align="right">
+                                        <label>Defense:</label><input type="number" name="attr_inputDefence"
+                                                placeholder="-" />
+                                        <div></div>
+                                        <label>Toughness:</label><input type="number" name="attr_inputToughness"
+                                                placeholder="-" />
+                                        <div></div>
+                                        <label>Size:</label><input type="number" name="attr_inputSize" placeholder="-" />
                                 </div>
-                        <hr>
-                        </hr>
-                        <div class="traits">
-                                        <div><h3>Traits:</h3></div>
-                                        
                         </div>
+                        <h2>Traits</h2>
+                        <fieldset class="repeating_Traits">
+                                <input type="text" class="traitName" name="attr_traitName" placeholder="Trait Name" />
+                                <input type="text" class="traitDesc" style="resize:vertical;" name="attr_traitDesc"
+                                        placeholder="Description"></textarea>
+                        </fieldset>
+
+                        <h2>Orders</h2>
+                        <fieldset class="repeating_Orders">
+                                <input type="text" class="orderName" name="attr_orderName" placeholder="Order Name" />
+                                <input type="text" class="orderDesc" style="resize:vertical;" name="attr_orderDesc"
+                                        placeholder="Description"></textarea>
+                        </fieldset>
                 </div>
         </div>
+        <div class="sheet-containerStronghold">
+                <h2><span name="attr_character_name"></span></h2>
+                <hr>
+                </hr>
+                <h3><span name="attr_inputAncestry"></span><span display:inline-block;>&nbsp;</span><span name="attr_inputExperience">
+                        </span></h3>
+                <h3><span name="attr_inputEquipment"></span><span display:inline-block;>&nbsp;</span><span name="attr_inputType">
+                </h3>
+                <h3><span>Cost:&nbsp;</span><span name="attr_cost">
+                        </span></h3>
+                <hr>
+                </hr>
+                <div class="sheet-container">
+                        <div>
+                                <h3>Attack:</h3>
+                        </div>
+                        <div>
+                                <h3><span name="attr_inputAttack"></span></h3>
+                        </div>
+                        <div>
+                                <h3>Defence:</h3>
+                        </div>
+                        <div>
+                                <h3><span name="attr_inputDefence"></h3>
+                        </div>
+                </div>
+                <hr>
+                </hr>
+                <div class="sheet-container">
+                        <div>
+                                <h3>Power:</h3>
+                        </div>
+                        <div>
+                                <h3><span name="attr_inputPower"></span></h3>
+                        </div>
+                        <div>
+                                <h3>Toughness:</h3>
+                        </div>
+                        <div>
+                                <h3><span name="attr_inputToughness"></h3>
+                        </div>
+                </div>
+                <hr>
+                </hr>
+                <div class="sheet-container">
+                        <div>
+                                <h3>Morale:</h3>
+                        </div>
+                        <div>
+                                <h3><span name="attr_inputMorale"></span></h3>
+                        </div>
+                        <div>
+                                <h3>Size:</h3>
+                        </div>
+                        <div>
+                                <h3><input type="number" class="displaySize" name="attr_inputSize" /></h3>
+                        </div>
+                </div>
+                <hr>
+                </hr>
+                <div>
+                        <h3>Traits:</h3>
+                </div>
+                <fieldset class="repeating_Traits sheet-display">
+                        <b><span name="attr_traitName"></span><span display:inline-block;>.&nbsp;</span></b><span name="attr_traitDesc">
+                        </span>
+                </fieldset>
+                <div class="ordersDisplay">
+                        <div>
+                                <h3>Orders:</h3>
+                        </div>
+                <fieldset class="repeating_Orders sheet-display">
+                        <b><span name="attr_orderName"></span><span display:inline-block;>.&nbsp;</span></b><span
+                                name="attr_orderDesc">
+                        </span>
+                </fieldset>
+
+                </div>
+        </div>
+</div>
