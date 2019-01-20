@@ -23,6 +23,26 @@
 
 /* Universal styling applied to all elements of these types */
 
+button[type="roll"]{ 
+    border: none;
+	background-color: transparent;
+	font-size: 12px;
+	margin-top: -1px;
+	cursor: pointer;
+	display: inline-block;
+	font: Arial;
+	align-content: center;
+}
+
+button[type=roll]::before
+{
+    content: "" !important;
+    background-color: transparent  !important;
+    align-content: center;
+}
+
+button[type=roll]:hover {background: #eee;}
+
 h2 {
 	font-size: 2em;
 	margin-top: 0px;
@@ -30,7 +50,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1em;
+	font-size: 12px;
 	margin-top: -1px;
 	text-align: left;
 }
@@ -65,7 +85,7 @@ textarea {
 
 .sheet-container {
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
     grid-template-rows: 25px 0px;
 }
 
@@ -84,19 +104,22 @@ fieldset.sheet-display~.repcontrol{
 	display: none;
 }
 
-fieldset.sheet-display+.repcontainer .repitem{
-	background: transparent;
+fieldset.sheet-traitName+.repcontainer .repitem{
 	border: none;
 	display: inline-block;
-
 }
+
+fieldset.sheet-traitDesc+.repcontainer .repitem{
+	border: none;
+	display: inline-block;
+}
+
+
 input.sheet-display{
 	background: transparent;
 	border: none;
 	display: inline-block;
-	width:auto;
 	font-weight:bold;
 	min-width:50px;
 	max-width:300px;
 }
-
