@@ -1,0 +1,71 @@
+/* Set the min-width so that when the window is resized the look will stay consistant */
+
+.charsheet{
+	background-color: #fff;
+	max-width: 355px;
+	min-width: 355px;
+	border-style: solid;
+	border-color: red;
+	border-width: 10px;
+
+}
+
+
+.sheet-containerUnit,
+.sheet-editCheckBox:checked ~ .sheet-containerStronghold {
+	display: none;
+}
+
+.sheet-containerStronghold,
+.sheet-editCheckBox:checked ~ .sheet-containerUnit {
+	display: block;
+}
+
+/* Universal styling applied to all elements of these types */
+
+h2 {
+	font-size: 2em;
+	margin-top: 0px;
+	text-align: left;
+}
+
+h3 {
+	font-size: 1em;
+	margin-top: -1px;
+	text-align: left;
+}
+
+hr {
+	display: block;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: auto;
+margin-right: auto;
+border-style: inset;
+border-width: 1px;
+}
+
+label {
+	display: inline-block;
+	width: auto;
+}
+
+input {
+	display: inline-block;
+	width: 97.5%;
+}
+
+img {
+	max-height: 100px;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.sheet-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 25px 25px;
+}
+

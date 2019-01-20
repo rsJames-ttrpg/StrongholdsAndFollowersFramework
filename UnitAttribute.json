@@ -1,0 +1,3 @@
+{
+    "attributes" : ["name", "ancestry", "experience", "equipment", "type", "cost", "attack", "defense", "power", "toughness", "morale" , "size"]
+}
