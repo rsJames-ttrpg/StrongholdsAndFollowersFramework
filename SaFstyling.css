@@ -129,4 +129,66 @@ input.sheet-display{
 	max-width:300px;
 }
 
+.sheet-rolltemplate-5eAttack .sheet-container {
+    background-color: #ffffff;
+    border: 1px solid;
+    padding: 2px;
+    width: 189px;
+}
 
+.sheet-rolltemplate-5eAttack .sheet-container h1 {
+    color: rgb(126, 45, 64);
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 20px;
+}
+
+.sheet-rolltemplate-5eAttack div {
+    padding: 2px;
+};
+ 
+.sheet-rolltemplate-5eAttack span {
+    color: rgb(126, 45, 64);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 1.6em;
+    padding-left: 5px;
+    text-align: left;
+}
+ 
+.sheet-rolltemplate-5eAttack .sheet-subheader {
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+}
+ 
+.sheet-rolltemplate-5eAttack .sheet-arrow-right {
+    border-bottom: 2px solid transparent;
+    border-left: 180px solid rgb(126, 45, 64);
+    border-top: 2px solid transparent;
+}
+ 
+.sheet-rolltemplate-5eAttack .sheet-tcat {
+    font-style: italic;
+}
+ 
+.sheet-rolltemplate-5eAttack .inlinerollresult  {
+    background-color: #ffffff;
+    border: none;
+}
+ 
+.sheet-rolltemplate-5eAttack .inlinerollresult.fullcrit {
+    color: #3FB315;
+    border: none;
+}
+ 
+.sheet-rolltemplate-5eAttack .inlinerollresult.fullfail {
+    color: #B31515;
+    border: none;
+}
+ 
+.sheet-rolltemplate-5eAttack .inlinerollresult.importandivoll {
+    color: #4A57ED;
+    border: none;
+}
