@@ -1,86 +1,26 @@
-<div>
+<div class="sheet-containerUnit">
         <input type='checkbox' class="sheet-editCheckBox" name='attr_editEnabled' value='1' checked='false' />
-        <div class="sheet-containerUnit">
-                <div class="col">
-                        <input type="text" name="attr_character_name" />
-                        <div class="2colrow">
-                                <div class="col">
-                                        <input type="text" name="attr_inputAncestry" placeholder="Ancestry" />
-                                        <input type="text" name="attr_inputEquipment" placeholder="Equipment" />
-                                </div>
-                                <div class="col">
-                                        <input type="text" name="attr_inputExperience" placeholder="Experience">
-                                        <input type="text" name="attr_inputType" placeholder="Type" />
+        <div class="sheet-containerInput">
+                <div>
+                        <div class="col sheet-input">
+                                <input type="text" class="sheet-input" name="attr_character_name" />
+                                <div class="2colrow sheet-input">
+                                        <div class="col">
+                                                <input type="text" name="attr_inputAncestry" placeholder="Ancestry" />
+                                                <input type="text" name="attr_inputEquipment" placeholder="Equipment" />
+                                        </div>
+                                        <div class="col">
+                                                <input type="text" name="attr_inputExperience" placeholder="Experience">
+                                                <input type="text" name="attr_inputType" placeholder="Type" />
+                                        </div>
                                 </div>
                         </div>
-                        <div></div>
-                        <div align="right">
+                        <div align="right" class="sheet-input">
                                 <label>Cost:</label><input type="number" name="attr_cost" placeholder="-" />
                         </div>
-                        <div class="2colrow">
-                                <div class="col" align="right">
-                                        <label>Attack:</label><input type="number" name="attr_inputAttack" placeholder="-" />
-                                        <div></div>
-                                        <label>Power:</label><input type="number" name="attr_inputPower" placeholder="-" />
-                                        <div></div>
-                                        <label>Morale:</label><input type="number" name="attr_inputMorale" placeholder="-" />
-                                </div>
-                                <div class="col" align="right">
-                                        <label>Defense:</label><input type="number" name="attr_inputDefence"
-                                                placeholder="-" />
-                                        <div></div>
-                                        <label>Toughness:</label><input type="number" name="attr_inputToughness"
-                                                placeholder="-" />
-                                        <div></div>
-                                        <label>Size:</label><input type="number" name="attr_inputSize_max" placeholder="-" />
-                                </div>
-                        </div>
-                        <h2>Traits</h2>
-                        <fieldset class="repeating_Traits">
-                                <input type="text" class="traitName" name="attr_traitName" placeholder="Trait Name" />
-                                <input type="text" class="traitDesc" style="resize:vertical;" name="attr_traitDesc"
-                                        placeholder="Description"></textarea>
-                        </fieldset>
-
-                        <h2>Orders</h2>
-                        <fieldset class="repeating_Orders">
-                                <input type="text" class="orderName" name="attr_orderName" placeholder="Order Name" />
-                                <input type="text" class="orderDesc" style="resize:vertical;" name="attr_orderDesc"
-                                        placeholder="Description"></textarea>
-                        </fieldset>
-                        <h2>Actions</h2>
-                        <fieldset class="repeating_Actions">
-                                <label>Name:</label><input type="text" class="actionName" name="attr_actionName"
-                                        placeholder="Action Name" />
-                                <label>Target:</label><input type="text" class="actionTarget" name="attr_actionTarget"
-                                        placeholder="1 unit" />
-                                <label>AttackMod:</label><input type="number" class="actionAttack" name="attr_actionAttackMod"
-                                        placeholder="10" />
-                                <label>PowerMod:</label><input type="number" class="actionPower" name="attr_actionPowerMod"
-                                        placeholder="5" />
-                                <label>MoraleSaveDC:</label><input type="number" class="actionMoraleSaveDC" name="attr_actionMoraleSave"
-                                        placeholder="15" />
-                                <label>Casualty:</label><input type="number" class="actionCasualty" name="attr_actionCasualty"
-                                        placeholder="3" />
-                                <label>Description:</label><input type="text" class="actionDesc" style="resize:vertical;"
-                                        name="attr_actionDesc" placeholder="Description"></textarea>
-                                        <button type='roll' value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=@{actionName}}} {{target=@{actionTarget}}} {{attack=[[1d20+@{actionAttackMod}]]}} {{attackadv=[[1d20+@{actionAttackMod}]]}} {{power=[[1d20+@{actionPowerMod}]]}} {{poweradv=[[1d20+@{actionPowerMod}]]}} {{moraleSave=@{actionMoraleSave}}}'
-                                        name='roll_Action'>                                       
-                                         <b><span name="attr_actionName"></span><span display:inline-block;>.&nbsp;</span></b>
-                                        <span>Target:&nbsp;</span>
-                                        <span name="attr_actionTarget">,&nbsp;Attack:&nbsp;
-                                        </span>
-                                        <span name="attr_actionAttackMod">,&nbsp;Power:&nbsp;
-                                        </span>
-                                        <span name="attr_actionPowerMod">,&nbsp;
-                                        </span>
-                                        <span name="attr_actionDesc">
-                                        </span>
-</button>
-                        </fieldset>
                 </div>
         </div>
-        <div class="sheet-containerStronghold">
+        <div class="sheet-containerDisplay">
                 <h2><span name="attr_character_name"></span></h2>
                 <hr>
                 </hr>
@@ -90,6 +30,26 @@
                 </h3>
                 <h3><span>Cost:&nbsp;</span><span name="attr_cost">
                         </span></h3>
+        </div>
+        <div class="sheet-containerInput">
+                <div class="2colrow">
+                        <div class="col" align="right">
+                                <label>Attack:</label><input type="number" name="attr_inputAttack" placeholder="-" />
+                                <div></div>
+                                <label>Power:</label><input type="number" name="attr_inputPower" placeholder="-" />
+                                <div></div>
+                                <label>Morale:</label><input type="number" name="attr_inputMorale" placeholder="-" />
+                        </div>
+                        <div class="col" align="right">
+                                <label>Defense:</label><input type="number" name="attr_inputDefence" placeholder="-" />
+                                <div></div>
+                                <label>Toughness:</label><input type="number" name="attr_inputToughness" placeholder="-" />
+                                <div></div>
+                                <label>Size:</label><input type="number" name="attr_inputSize_max" placeholder="-" />
+                        </div>
+                </div>
+        </div>
+        <div class="sheet-containerDisplay">
                 <hr>
                 </hr>
                 <div class="sheet-container">
@@ -130,51 +90,197 @@
                         </div>
 
                 </div>
-                <hr>
-                </hr>
-                <div>
-                        <h3>Traits:</h3>
-                </div>
+
+        </div>
+        <div>
+                <h3>Traits:</h3>
+        </div>
+        <div class="sheet-containerInput">
+                <fieldset class="repeating_Traits">
+                        <input type="text" class="traitName sheet-input" name="attr_traitName" placeholder="Trait Name" />
+                        <input type="text" class="traitDesc sheet-input" name="attr_traitDesc" placeholder="Description"></textarea>
+                </fieldset>
+        </div>
+        <div class="sheet-containerDisplay">
                 <fieldset class="repeating_Traits sheet-display">
-                        <b><span name="attr_traitName"></span><span display:inline-block;>.&nbsp;</span></b><span name="attr_traitDesc">
+                        <div class="sheet-repeatDisplay sheet-display">
+                                <b><span name="attr_traitName"></span><span display:inline-block;>.&nbsp;</span></b><span
+                                        name="attr_traitDesc">
+                                </span>
+                        </div>
+                </fieldset>
+        </div>
+        <div>
+                <h3>Orders</h3>
+        </div>
+        <div class="sheet-containerInput">
+                <fieldset class="repeating_Orders">
+                        <input type="text" class="orderName sheet-input" name="attr_orderName" placeholder="Order Name" />
+                        <input type="text" class="orderDesc sheet-input" name="attr_orderDesc" placeholder="Description"></textarea>
+                </fieldset>
+        </div>
+        <div class="sheet-containerDisplay">
+                <fieldset class="repeating_Orders sheet-display">
+                        <b><span name="attr_orderName"></span><span display:inline-block;>.&nbsp;</span></b><span name="attr_orderDesc">
                         </span>
                 </fieldset>
-                <div class="ordersDisplay">
-                        <div>
-                                <h3>Orders:</h3>
-                        </div>
-                        <fieldset class="repeating_Orders sheet-display">
-                                <b><span name="attr_orderName"></span><span display:inline-block;>.&nbsp;</span></b><span
-                                        name="attr_orderDesc">
+        </div>
+        <div>
+                <h2>Actions</h2>
+        </div>
+        <div class="sheet-containerInput">
+                <fieldset class="repeating_Actions">
+                        <label>Name:</label><input type="text" class="actionName sheet-input" name="attr_actionName"
+                                placeholder="Action Name" />
+                        <label>Target:</label><input type="text" class="actionTarget sheet-input" name="attr_actionTarget"
+                                placeholder="1 unit" />
+                        <label>AttackMod:</label><input type="number" class="actionAttack sheet-input" name="attr_actionAttackMod"
+                                placeholder="10" />
+                        <label>PowerMod:</label><input type="number" class="actionPower sheet-input" name="attr_actionPowerMod"
+                                placeholder="5" />
+                        <label>MoraleSaveDC:</label><input type="number" class="actionMoraleSaveDC sheet-input" name="attr_actionMoraleSave"
+                                placeholder="15" />
+                        <label>Casualty:</label><input type="number" class="actionCasualty sheet-input" name="attr_actionCasualty"
+                                placeholder="3" />
+                        <label>Description:</label><input type="text" class="actionDesc sheet-input" style="resize:vertical;"
+                                name="attr_actionDesc" placeholder="Description"></textarea>
+                        <button type='roll' class="sheet-display" value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=@{actionName}}} {{target=@{actionTarget}}} {{attack=[[1d20+@{actionAttackMod}]]}} {{attackadv=[[1d20+@{actionAttackMod}]]}} {{power=[[1d20+@{actionPowerMod}]]}} {{poweradv=[[1d20+@{actionPowerMod}]]}} {{moraleSave=@{actionMoraleSave}}}'
+                                name='roll_Action'>
+                                <b><span name="attr_actionName"></span><span display:inline-block;>.&nbsp;</span></b>
+                                <span>Target:&nbsp;</span>
+                                <span name="attr_actionTarget">,&nbsp;Attack:&nbsp;
                                 </span>
-                        </fieldset>
-
-                </div>
-                <div class="actionsDisplay">
-                        <div>
-                                <h3>Actions:</h3>
+                                <span name="attr_actionAttackMod">,&nbsp;Power:&nbsp;
+                                </span>
+                                <span name="attr_actionPowerMod">,&nbsp;
+                                </span>
+                                <span name="attr_actionDesc">
+                                </span>
+                        </button>
+                </fieldset>
+        </div>
+        <div class="sheet-containerDisplay">
+                <fieldset class="repeating_Actions sheet-display">
+                        <div hidden>
+                        <input type="text" class="actionName sheet-input" name="attr_actionName"  />
+                        <input type="text" class="actionTarget sheet-input" name="attr_actionTarget"  />
+                        <input type="number" class="actionAttack sheet-input" name="attr_actionAttackMod"  />
+                        <input type="number" class="actionPower sheet-input" name="attr_actionPowerMod"  />
+                        <input type="number" class="actionMoraleSaveDC sheet-input" name="attr_actionMoraleSave"  />
+                        <input type="number" class="actionCasualty sheet-input" name="attr_actionCasualty"  />
+                        <input type="text" class="actionDesc sheet-input" style="resize:vertical;" name="attr_actionDesc"
+                                ></textarea>
                         </div>
-                        <fieldset class="repeating_Actions sheet-display">
-                                <button type='roll' class="rollvalue" value='rollvalue'
-                                        name='roll_Action'>
-                                        <b><span name="attr_actionName"></span><span display:inline-block;>.&nbsp;</span></b>
-                                        <span>Target:&nbsp;</span>
-                                        <span name="attr_actionTarget">,&nbsp;Attack:&nbsp;
-                                        </span>
-                                        <span name="attr_actionAttackMod">,&nbsp;Power:&nbsp;
-                                        </span>
-                                        <span name="attr_actionPowerMod">,&nbsp;
-                                        </span>
-                                        <span name="attr_actionDesc">
-                                        </span>
-                                </button>
-                                <button type='roll' value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=@{actionName}}} {{target=@{actionTarget}}} {{attack=[[1d20+@{actionAttackMod}]]}} {{attackadv=[[1d20+@{actionAttackMod}]]}} {{power=[[1d20+@{actionPowerMod}]]}} {{poweradv=[[1d20+@{actionPowerMod}]]}} {{moraleSave=@{actionMoraleSave}}}'
-                                name='roll_Action'>cast</button>
-                        </fieldset>
-
+                        <button type='roll' class="sheet-display" value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=@{actionName}}} {{target=@{actionTarget}}} {{attack=[[1d20+@{actionAttackMod}]]}} {{attackadv=[[1d20+@{actionAttackMod}]]}} {{power=[[1d20+@{actionPowerMod}]]}} {{poweradv=[[1d20+@{actionPowerMod}]]}} {{moraleSave=@{actionMoraleSave}} {{description=@{actionDesc}}}'
+                                name='roll_Action'>
+                                <b><span name="attr_actionName"></span><span display:inline-block;>.&nbsp;</span></b>
+                                <span>Target:&nbsp;</span>
+                                <span name="attr_actionTarget">,&nbsp;Attack:&nbsp;
+                                </span>
+                                <span name="attr_actionAttackMod">,&nbsp;Power:&nbsp;
+                                </span>
+                                <span name="attr_actionPowerMod">,&nbsp;
+                                </span>
+                                <span name="attr_actionDesc">
+                                </span>
+                        </button>
+                </fieldset>
+        </div>
+</div>
+</div>
+<div class="sheet-containerStronghold">
+        <!-- <h2><span name="attr_character_name"></span></h2>
+        <hr>
+        </hr> -->
+        <!-- <h3><span name="attr_inputAncestry"></span><span display:inline-block;>&nbsp;</span><span name="attr_inputExperience">
+                </span></h3>
+        <h3><span name="attr_inputEquipment"></span><span display:inline-block;>&nbsp;</span><span name="attr_inputType">
+        </h3>
+        <h3><span>Cost:&nbsp;</span><span name="attr_cost">
+                </span></h3>
+        <hr>
+        </hr>
+        <div class="sheet-container">
+                <button class="sheet-button-roll" type='roll' value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=Attack, @{inputAncestry} @{inputExperience}}} {{attack=[[1d20+@{inputAttack}]]}} {{attackadv=[[1d20+@{inputAttack}]]}}'
+                        name='roll_Attack'>
+                        <div>
+                                <h3>Attack:&nbsp;<span name="attr_inputAttack"></span></h3>
+                        </div>
+                </button>
+                <div>
+                        <h3>Defence:&nbsp;<span name="attr_inputDefence"></h3>
+                </div>
+        </div>
+        <hr>
+        </hr>
+        <div class="sheet-container">
+                <button class="sheet-button-roll" type='roll' value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=Power, @{inputAncestry} @{inputExperience}}} {{power=[[1d20+@{inputPower}]]}} {{poweradv=[[1d20+@{inputPower}]]}}'
+                        name='roll_Power'>
+                        <div>
+                                <h3>Power:&nbsp;<span name="attr_inputPower"></span></h3>
+                        </div>
+                </button>
+                <div>
+                        <h3>Toughness:&nbsp;<span name="attr_inputToughness"></h3>
+                </div>
+        </div>
+        <hr>
+        </hr>
+        <div class="sheet-container">
+                <button class="sheet-button-roll" type='roll' value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=Morale, @{inputAncestry} @{inputExperience}}} {{morale=[[1d20+@{inputMorale}]]}} {{moraleadv=[[1d20+@{inputMorale}]]}}'
+                        name='roll_Morale'>
+                        <div>
+                                <h3>Morale:&nbsp;<span name="attr_inputMorale"></span></h3>
+                        </div>
+                </button>
+                <div>
+                        <h3>Size:&nbsp;<input type="number" class="displaySize" name="attr_inputSize" /></h3>
                 </div>
 
         </div>
+        <hr>
+        </hr>
+        <div>
+                <h3>Traits:</h3>
+        </div>
+        <fieldset class="repeating_Traits sheet-display">
+                <b><span name="attr_traitName"></span><span display:inline-block;>.&nbsp;</span></b><span name="attr_traitDesc">
+                </span>
+        </fieldset>
+        <div class="ordersDisplay">
+                <div>
+                        <h3>Orders:</h3>
+                </div>
+                <fieldset class="repeating_Orders sheet-display">
+                        <b><span name="attr_orderName"></span><span display:inline-block;>.&nbsp;</span></b><span name="attr_orderDesc">
+                        </span>
+                </fieldset>
+
+        </div>
+        <div class="actionsDisplay">
+                <div>
+                        <h3>Actions:</h3>
+                </div>
+                <fieldset class="repeating_Actions sheet-display">
+                        <button type='roll' class="rollvalue" value='rollvalue' name='roll_Action'>
+                                <b><span name="attr_actionName"></span><span display:inline-block;>.&nbsp;</span></b>
+                                <span>Target:&nbsp;</span>
+                                <span name="attr_actionTarget">,&nbsp;Attack:&nbsp;
+                                </span>
+                                <span name="attr_actionAttackMod">,&nbsp;Power:&nbsp;
+                                </span>
+                                <span name="attr_actionPowerMod">,&nbsp;
+                                </span>
+                                <span name="attr_actionDesc">
+                                </span>
+                        </button>
+                        <button type='roll' value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=@{actionName}}} {{target=@{actionTarget}}} {{attack=[[1d20+@{actionAttackMod}]]}} {{attackadv=[[1d20+@{actionAttackMod}]]}} {{power=[[1d20+@{actionPowerMod}]]}} {{poweradv=[[1d20+@{actionPowerMod}]]}} {{moraleSave=@{actionMoraleSave}}}'
+                                name='roll_Action'>cast</button>
+                </fieldset>
+
+        </div>
+
+</div> -->
 </div>
 
 
@@ -202,6 +308,9 @@
                 {{#moraleSave}}
                 <div class="rowcolor"><span class="tcat">Morale Save DC: </span>{{moraleSave}}</div>
                 {{/moraleSave}}
+                {{#description}}
+                <div class="rowcolor"><span class="tcat">Description: </span>{{description}}</div>
+                {{/description}}
 
                 {{#damage}}
                 <div>
