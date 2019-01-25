@@ -11,15 +11,31 @@
 }
 
 
-.sheet-containerUnit,
-.sheet-editCheckBox:checked ~ .sheet-containerStronghold {
+.sheet-containerInput,
+.sheet-editCheckBox:checked ~ .sheet-containerDisplay {
 	display: none;
 }
 
-.sheet-containerStronghold,
-.sheet-editCheckBox:checked ~ .sheet-containerUnit {
+.sheet-containerDisplay,
+.sheet-editCheckBox:checked ~ .sheet-containerInput {
+	display: block;
+} 
+
+.sheet-editCheckBox::before{
+	content: "" !important;
+	font-family:"Pictos";
+}
+/* 
+.sheet-display,
+.sheet-editCheckBox:checked ~ .sheet-display {
+	display: none;
+}
+
+.sheet-input,
+.sheet-editCheckBox:checked ~ .sheet-input {
 	display: block;
 }
+ */
 
 /* Universal styling applied to all elements of these types */
 
@@ -35,7 +51,7 @@ button[type="roll"]{
 	font: Arial;
 	align-content: center;
 	padding: 0px;
-    width: 75%;
+    width: auto;
     overflow: hidden;
 }
 
@@ -57,6 +73,13 @@ h2 {
 h3 {
 	font-size: 12px;
 	margin-top: -1px;
+	text-align: left;
+}
+
+h4 {
+	font-size: 18px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	text-align: left;
 }
 
@@ -101,6 +124,13 @@ input[type="number"]
 	font-weight: bold;
 }
 
+button.sheet-button-roll{
+	text-align: left;
+	white-space: normal;
+	margin-left: 0%;
+	margin-top: 0%;
+	font: 12px;
+}
 .repcontainer[data-groupname="repeating_example"] > .repitem {
     display: inline-block;
 }
@@ -133,7 +163,7 @@ input.sheet-display{
     background-color: #ffffff;
     border: 1px solid;
     padding: 2px;
-    width: 189px;
+    width: 210px;
 }
 
 .sheet-rolltemplate-5eAttack .sheet-container h1 {
