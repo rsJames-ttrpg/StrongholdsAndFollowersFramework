@@ -21,6 +21,10 @@
 	display: block;
 } 
 
+.sheet-editCheckBox::before{
+	content: "" !important;
+	font-family:"Pictos";
+}
 /* 
 .sheet-display,
 .sheet-editCheckBox:checked ~ .sheet-display {
@@ -72,6 +76,13 @@ h3 {
 	text-align: left;
 }
 
+h4 {
+	font-size: 18px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
 hr {
 	display: block;
 margin-top: 0px;
@@ -113,6 +124,13 @@ input[type="number"]
 	font-weight: bold;
 }
 
+button.sheet-button-roll{
+	text-align: left;
+	white-space: normal;
+	margin-left: 0%;
+	margin-top: 0%;
+	font: 12px;
+}
 .repcontainer[data-groupname="repeating_example"] > .repitem {
     display: inline-block;
 }
@@ -145,7 +163,7 @@ input.sheet-display{
     background-color: #ffffff;
     border: 1px solid;
     padding: 2px;
-    width: 189px;
+    width: 210px;
 }
 
 .sheet-rolltemplate-5eAttack .sheet-container h1 {
