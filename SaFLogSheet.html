@@ -1,12 +1,15 @@
-<div class="sheet-containerUnit">
-        <input type='checkbox' class="sheet-editCheckBox" name='attr_editEnabled' value='1' checked='false' />
+<input type="radio" name="attr_tab" class="sheet-tab sheet-containerUnit sheet-size1" value="1" checked="checked"><span
+        title="Unit"></span>
+<input type="radio" name="attr_tab" class="sheet-tab sheet-containerStronghold sheet-size2" value="2"><span title="Stronghold"></span>
+<div class="sheet-tab-content sheet-containerUnit">
+        <input type='checkbox' class="sheet-editCheckBox" name='attr_editEnabled' value='1' checked='false' /><span></span>
         <div class="sheet-containerInput">
                 <div>
                         <div class="col sheet-input">
                                 <input type="text" class="sheet-input" name="attr_character_name" />
                                 <div class="2colrow sheet-input">
                                         <div class="col">
-                                                      <input type="text" name="attr_inputAncestry" placeholder="Ancestry" />
+                                                <input type="text" name="attr_inputAncestry" placeholder="Ancestry" />
                                                 <input type="text" name="attr_inputEquipment" placeholder="Equipment" />
                                         </div>
                                         <div class="col">
@@ -86,11 +89,13 @@
                                 </div>
                         </button>
                         <div>
-                                <h3>Size:&nbsp;<input type="number" class="displaySize" name="attr_inputSize" /></h3>
+                                <h3>Size:&nbsp;<input type="number" class="displaySize" name="attr_inputSize" /><span>/</span><span
+                                                name="attr_inputSize_max"></span></h3>
                         </div>
 
                 </div>
-
+                <hr>
+                </hr>
         </div>
         <div>
                 <h4>Traits:</h4>
@@ -173,29 +178,130 @@
                                         </span></h3>
                         </button>
                 </fieldset>
-                <input type='checkbox' class="sheet-editCheckBox" name='attr_editEnabled' value='1' checked='false' />
         </div>
 </div>
-<div class="Sheet-containerStronghold">
-        <div class="sheet-stornghold-input">
-                <input type="text" class="sheet-input" name="attr_character_name"/>
-                <input type="text" class="sheet-input" name="attr_type" placeholder="Stronghold Type"/>
-                <input type="text" class="sheet-input" name="attr_subtype" placeholder="Stronghold Subtype"/>
-                <input type="number" class="sheet-input" name="attr_level" placeholder="1"/>
-                <input type="number" class="sheet-input" name="attr_defence" placeholder="10"/>
-                <input type="number" class="sheet-input" name="attr_toughness" placeholder="15"/>
-                <input type="number" class="sheet-input" name="attr_size_max" placeholder="15"/>
-                <input type="number" class="sheet-input" name="attr_morale_per_level" placeholder="2"/>
-                <input type="number" class="sheet-input" name="attr_influence_radius" placeholder="1"/>
-                <input type="number" class="sheet-input" name="attr_treasury" placeholder="-">
-                <input type="number" class="sheet-input" name="attr_unit_upkeep" placeholder="10% of unit value">
-                <!-- repeating section for extensions  -->
-                <!-- repeating section for demense effects  -->
-                <!-- repeating section for special followers  -->
+<div class="sheet-tab-content sheet-containerStronghold">
+        <input type='checkbox' class="sheet-editStrongCheckBox" name='attr_editEnabledStrong' value='1' checked='false' /><span></span>
+
+        <div class="sheet-stronghold-input">
+                <div class="col">
+                        <div class="col">
+                                <input type="text" class="sheet-input" name="attr_character_name" />
+                                <div class="col">
+                                        <input type="text" class="sheet-input" name="attr_strongtype" placeholder="Stronghold Type" />
+                                </div>
+                                <div class="col">
+                                        <input type="text" class="sheet-input" name="attr_strongsubtype" placeholder="Stronghold Subtype" />
+                                </div>
+                        </div>
+                </div>
+                <div class="3colrow">
+                        <div class="col">
+                                <label>Level</label><input type="number" class="sheet-input" name="attr_stronglevel"
+                                        placeholder="1" />
+                        </div>
+                        <div class="col">
+                                <label>Influence Radius</label><input type="number" class="sheet-input" name="attr_influence_radius"
+                                        placeholder="1" />
+                        </div>
+                        <div class="col">
+                                <label>Morale per Level</label><input type="number" class="sheet-input" name="attr_morale_per_level"
+                                        placeholder="2" />
+                        </div>
+                </div>
+
+                <div class="3colrow">
+                        <div class="col">
+                                <label>Treasury</label><input type="number" class="sheet-input sheet-expanding-number"
+                                        name="attr_treasury" placeholder="-">
+                        </div>
+                        <div class="col">
+
+                                <label>Unit Upkeep</label><input type="number" class="sheet-input" name="attr_unit_upkeep"
+                                        placeholder="10%">
+                        </div>
+                        <div class="col">
+                                <label>Size</label><input type="number" class="sheet-input" name="attr_strongsize_max"
+                                        placeholder="15" />
+                        </div>
+                </div>
+                <div class="3colrow">
+                        <div class="col">
+                                <label>Defence</label><input type="number" class="sheet-input" name="attr_strongdefence"
+                                        placeholder="10" />
+                        </div>
+                        <div class="col">
+                                <label>Toughness</label><input type="number" class="sheet-input" name="attr_strongtoughness"
+                                        placeholder="15" />
+                        </div>
+                        <div class="col">
+                                <label>Speed</label><input type="number" class="sheet-input" name="attr_strongspeed"
+                                        placeholder="0" />
+                        </div>
+
+                </div>
+                <h3>Demesne Effects</h3>
+                <fieldset class="repeating_demesneeffects">
+                        <input type="text" class="demesne-effect sheet-input" name="attr_demesne_effect_desc" placeholder="Demesne Effect" />
+                </fieldset>
+                <h3>Artisans</h3>
+                <fieldset class="repeating_artisans">
+                        <input type="text" class="artisan-name sheet-input" name="attr_artisan_name" placeholder="Name" />
+                        <input type="text" class="artisan-type sheet-input" name="attr_artisan_type" placeholder="Type" />
+                        <input type="text" class="artisan-descritpion sheet-input" name="attr_artisan_desc" placeholder="Description" />
+                </fieldset>
+        </div>
+        <div class="sheet-stronghold-display">
+                <h2><span name="attr_character_name"></span></h2>
+                <hr>
+                </hr>
+                <h3><span display:inline-block;>Level&nbsp;</span><span name="attr_stronglevel"></span><span>&nbsp;</span><span
+                                name="attr_strongtype"></span><span display:inline-block;>,&nbsp;</span><span name="attr_strongsubtype">
+                        </span></h3>
+                <div class="2colrow">
+                        <div class="col">
+                                <h3><span display:inline-block;>Upkeep: &nbsp;</span><span name="attr_unit_upkeep"></span></h3>
+
+                        </div>
+                        <div class="col">
+                                <h3><span display:inline-block;>Treasury (gp):&nbsp;</span> <input type="number" class="sheet-input sheet-expanding-number"
+                                                name="attr_treasury" placeholder="-"></h3>
+                                </span>
+                        </div>
+                </div>
+                <div class="2colrow">
+                        <div class="col">
+                                <h3><span display:inline-block;>Morale Bonus:&nbsp;</span><input type="number" name="attr_strong_morale_bonus"
+                                                value="@{morale_per_level} * @{stronglevel}" disabled="true" /></h3>
+                        </div>
+                        <div class="col">
+                                <h3><span display:inline-block;>Size: &nbsp;</span><input type="number" name="attr_strongsize"></span><span>/</span><span
+                                                name="attr_strongsize_max"></span></h3>
+                        </div>
+                </div>
+                <div class="2colrow">
+                        <div class="col">
+                                <h3><span display:inline-block;>Defence:&nbsp;</span><span name="attr_strongdefence"></span></h3>
+                        </div>
+                        <div class="col">
+                                <h3><span display:inline-block;>Toughness:&nbsp;</span><span name="attr_strongtoughness"></span></h3>
+                        </div>
+                        <hr>
+                        </hr>
+                </div>
+                <h3>Demesne Effects:</h3>
+                <fieldset class="repeating_demesneeffects sheet-display">
+                        <h3><span name="attr_demesne_effect_desc"></span></h3>
+                </fieldset>
+                <h3>Artisans:</h3>
+                <fieldset class="repeating_artisans sheet-display">
+                        <h3><span name="attr_artisan_name"></span><span>.&nbsp;</span><span name="attr_artisan_type"></span><span>,&nbsp;</span><span
+                                        name="attr_artisan_desc"></span></h3>
+
+                </fieldset>
+
         </div>
 </div>
-
-
 <rolltemplate class="sheet-rolltemplate-5eAttack">
         <div class="container">
                 <div>
@@ -209,13 +315,16 @@
                 <div class="rowcolor"><span class="tcat">Target: </span>{{target}}</div>
                 {{/target}}
                 {{#attack}}
-                <div class="rowcolor"><span class="tcat">Attack: </span>{{attack}} | {{attackadv}} vs Defence</div>
+                <div class="rowcolor"><span class="tcat">Attack: </span>{{attack}} | {{attackadv}} vs
+                        Defence</div>
                 {{/attack}}
                 {{#power}}
-                <div class="rowcolor"><span class="tcat">Power: </span>{{power}} | {{poweradv}} vs Toughness</div>
+                <div class="rowcolor"><span class="tcat">Power: </span>{{power}} | {{poweradv}} vs
+                        Toughness</div>
                 {{/power}}
                 {{#morale}}
-                <div class="rowcolor"><span class="tcat">Morale Check: </span>{{morale}} | {{moraleadv}}</div>
+                <div class="rowcolor"><span class="tcat">Morale Check: </span>{{morale}} |
+                        {{moraleadv}}</div>
                 {{/morale}}
                 {{#moraleSave}}
                 <div class="rowcolor"><span class="tcat">Morale Save DC: </span>{{moraleSave}}</div>

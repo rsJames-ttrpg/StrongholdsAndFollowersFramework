@@ -2,14 +2,17 @@
 
 .charsheet{
 	background-color: #fff;
-	max-width: 355px;
+	max-width: 755px;
 	min-width: 355px;
-	border-style: solid;
-	border-color: red;
-	border-width: 10px;
-
+	border-style: none;
+	border-width: 7px;
 }
 
+.sheet-containerInput{
+	max-width: 355px;
+
+
+}
 
 .sheet-containerInput,
 .sheet-editCheckBox:checked ~ .sheet-containerDisplay {
@@ -20,10 +23,60 @@
 .sheet-editCheckBox:checked ~ .sheet-containerInput {
 	display: block;
 } 
+.sheet-stronghold-input,
+.sheet-editStrongCheckBox:checked ~ .sheet-stronghold-display {
+	display: none;
+}
 
-.sheet-editCheckBox::before{
-	content: "" !important;
-	font-family:"Pictos";
+.sheet-stronghold-display,
+.sheet-editStrongCheckBox:checked ~ .sheet-stronghold-input {
+	display: block;
+} 
+
+input[type="checkbox"] {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -5px;
+    left: 6px;
+    margin: -10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+input.sheet-input.sheet-expanding-number{
+	width: auto;
+}
+/* Fake radio/checkbox */
+
+input[type="checkbox"] + span::before {
+    margin-right: 4px;
+    line-height: 14px;
+    text-align: center;
+    top: -5px;
+    display: inline-block;
+    vertical-align: top;
+    font-family:"Pictos";
+    background: transparent;
+}
+
+
+/* Fake checkbox */
+input[type="checkbox"] + span::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    top: -5px;
+    content: "y";
+    color: gray;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+input[type="checkbox"]:checked + span::before {
+    color: black;
+    content: "y";
 }
 /* 
 .sheet-display,
@@ -222,3 +275,67 @@ input.sheet-display{
     color: #4A57ED;
     border: none;
 }
+
+/*Tab Section*/
+div.sheet-tab-content { display: none; }
+
+input.sheet-containerUnit:checked ~ div.sheet-containerUnit,
+input.sheet-containerStronghold:checked ~ div.sheet-containerStronghold { display: block; }
+
+input.sheet-tab {
+    width: 150px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+    left: 50px;
+    margin: -1.5px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+}
+
+input.sheet-tab + span::before {
+    content: attr(title);
+    border: solid 1px #a8a8a8;
+    border-bottom-color: black;
+    text-align: center;
+    display: inline-block;
+    background: #fff;
+    background: linear-gradient(to top, #c8c8c8, #fff, #c8c8c8);
+    width: 150px;
+    height: 20px;
+    font-size: 18px;
+    position: absolute;
+    top: 70px;
+    left: 58px;
+}
+
+input.sheet-tab:checked + span::before {
+    background: #dcdcdc;
+    background: linear-gradient(to top, #fcfcfc, #dcdcdc, #fcfcfc);
+    border-bottom-color: #fff;
+}
+
+input.sheet-tab:not(:first-child) + span::before { border-left: none; }
+
+input.sheet-containerStronghold + span::before {
+    background: #fee;
+    background: linear-gradient(to top, #f8c8c8, #fee, #f8c8c8);
+    left: 210px;
+}
+
+input.sheet-containerStronghold:checked + span::before {
+    background: #fee;
+    background: linear-gradient(to top, #f8c8c8, #fee, #f8c8c8);
+    border-bottom-color: #fcecec;
+}
+
+
+div.sheet-tab-content {
+    border: 3px solid gray;
+    border-top-color: #000;
+    margin: 2px 0 0 5px;
+    padding: 5px;
+}
+
+div.sheet-containerStronghold { background-color: #fcecec; }
