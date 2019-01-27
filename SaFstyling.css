@@ -8,10 +8,10 @@
 	border-width: 7px;
 }
 
+.sheet-container::content[]
+
 .sheet-containerInput{
 	max-width: 355px;
-
-
 }
 
 .sheet-containerInput,
