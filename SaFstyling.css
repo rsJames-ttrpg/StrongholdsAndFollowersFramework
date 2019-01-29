@@ -78,17 +78,6 @@ input[type="checkbox"]:checked + span::before {
     color: black;
     content: "y";
 }
-/* 
-.sheet-display,
-.sheet-editCheckBox:checked ~ .sheet-display {
-	display: none;
-}
-
-.sheet-input,
-.sheet-editCheckBox:checked ~ .sheet-input {
-	display: block;
-}
- */
 
 /* Universal styling applied to all elements of these types */
 
@@ -148,7 +137,8 @@ border-width: 1px;
 
 label {
 	display: inline-block;
-	width: auto;
+    width: auto;
+    font-size: 12px;
 }
 
 input {

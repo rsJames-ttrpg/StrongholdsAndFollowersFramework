@@ -1,3 +1,7 @@
 {
-    "attributes" : ["name", "ancestry", "experience", "equipment", "type", "cost", "attack", "defense", "power", "toughness", "morale" , "size"]
+    "attributes" : ["name", "ancestry", "experience", "equipment", "type", "cost", "attack", "defense", "power", "toughness", "morale" , "size"],
+    "Acestry" : [],
+    "Experience":["Green", "Regular", "Seasoned","Veteran", "Elite","Super-Elite"],
+    "Equipment":["Light", "Medium", "Heavy","Super-heavy"],
+    "Type":["Levies","Infantry","Archers","Cavalry","Flying","Fortifications","Siege Engines"]
 }
