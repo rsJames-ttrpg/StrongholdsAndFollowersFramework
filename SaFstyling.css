@@ -32,6 +32,10 @@
 	display: block;
 } 
 
+div.sheet-containerDisplay.sheet-repeating-display .repcontainer:empty ~ h3 {
+    display: none;
+}
+
 input[type="checkbox"] {
     opacity: 0;
     width: 16px;
