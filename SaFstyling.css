@@ -32,7 +32,7 @@
 	display: block;
 } 
 
-div.sheet-containerDisplay.sheet-repeating-display .repcontainer:empty ~ h3 {
+div.sheet-containerDisplay.sheet-repeating-display .repcontainer:empty ~ b {
     display: none;
 }
 

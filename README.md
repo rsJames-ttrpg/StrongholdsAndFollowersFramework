@@ -13,7 +13,7 @@ Current Features are:
 * Traits and orders repeating section.
 * An actions section where you can create a rollable macro based on variable inputs useful for battle magic.
 
-# Stronghold tab
+# Stronghold Tab
 * Sections for keeping track of the stronghold stats, artisans and demesne effects.
 
 You can see the sheet in action in this open game https://app.roll20.net/join/4198226/jujBPA
