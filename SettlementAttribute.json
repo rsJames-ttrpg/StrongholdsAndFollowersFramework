@@ -1,5 +1,0 @@
-{
-    "attributes" : ["name", "type", "population", "unrest", "development", "resources","purchase_multiplier"],
-    "resources" : ["name", "value_per_unit"],
-    "services" : ["name", "type"]
-}

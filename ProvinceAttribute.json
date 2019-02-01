@@ -1,0 +1,5 @@
+{
+    "attributes" : ["name", "type", "unrest", "development","purchase_multiplier"],
+    "poupulation_centres":["name", "type", "toughness"], 
+    "resources" : ["name", "quantity" ,"value_per_unit", "source"]
+}
