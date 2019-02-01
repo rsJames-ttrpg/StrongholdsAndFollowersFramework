@@ -1,5 +1,6 @@
 {
-    "attributes" : ["name", "type", "unrest", "development","purchase_multiplier"],
-    "poupulation_centres":["name", "type", "toughness"], 
-    "resources" : ["name", "quantity" ,"value_per_unit", "source"]
+    "attributes" : ["name", "population","unrest", "law", "development","purchase_multiplier"],
+    "power_centre":["name", "type","affiliation"], 
+    "resources" : ["active","name", "quantity" ,"value_per_unit", "source", "assigned"],
+    "organisations":["name", "description", "effects", "location"]
 }
