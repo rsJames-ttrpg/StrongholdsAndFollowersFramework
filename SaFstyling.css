@@ -270,10 +270,12 @@ input.sheet-display{
 }
 
 /*Tab Section*/
+
 div.sheet-tab-content { display: none; }
 
 input.sheet-containerUnit:checked ~ div.sheet-containerUnit,
-input.sheet-containerStronghold:checked ~ div.sheet-containerStronghold { display: block; }
+input.sheet-containerStronghold:checked ~ div.sheet-containerStronghold,
+input.sheet-containerProvince:checked ~ div.sheet-containerProvince{ display: block; }
 
 input.sheet-tab {
     width: 150px;
@@ -286,6 +288,7 @@ input.sheet-tab {
     z-index: 1;
     opacity: 0;
 }
+
 
 input.sheet-tab + span::before {
     content: attr(title);
@@ -317,6 +320,8 @@ input.sheet-containerStronghold + span::before {
     left: 210px;
 }
 
+input.sheet-containerProvince + span::before { left: 360px; }
+
 input.sheet-containerStronghold:checked + span::before {
     background: #fee;
     background: linear-gradient(to top, #f8c8c8, #fee, #f8c8c8);
@@ -332,3 +337,28 @@ div.sheet-tab-content {
 }
 
 div.sheet-containerStronghold { background-color: #fcecec; }
+
+
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color: #111;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: red;
+  }
+  
