@@ -1,6 +1,7 @@
 {
-    "attributes" : ["name", "population","unrest", "law", "development","purchase_multiplier"],
+    "attributes" : ["name", "population","unrest", "law", "development","purchase_multiplier", "revenue", "upkeep"],
     "power_centre":["name", "type","affiliation"], 
-    "resources" : ["active","name", "quantity" ,"value_per_unit", "source", "assigned"],
+    "resources" : ["assigned","type","name", "quantity" ,"value_per_unit", "source", "stockpile", "Units_Traded"],
+    "stockpile" : ["Food", "Metal","Stone","Wood","Exotic"],
     "organisations":["name", "description", "effects", "location"]
 }
