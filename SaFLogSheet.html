@@ -4,6 +4,7 @@
 <input type="radio" name="attr_tab" class="sheet-tab sheet-containerProvince sheet-size3" value="3"><span title="Province"></span>
 <div class="sheet-tab-content sheet-containerUnit">
         <input type='checkbox' class="sheet-editCheckBox" name='attr_editEnabled' value='1' checked='false' /><span></span>
+
         <div class="sheet-containerInput">
                 <div>
                         <div class="col sheet-input">
@@ -354,46 +355,269 @@
         </div>
 </div>
 <div class="sheet-tab-content sheet-containerProvince">
-        <input type='checkbox' class="sheet-editStrongCheckBox" name='attr_editEnabledStrong' value='1' checked='false' /><span></span>
-        <hr></hr>
+        <input type='checkbox' class="sheet-editProvinceCheckBox" name='attr_editEnabledProvince' value='1' checked='false' /><span></span>
         <div class="sheet-province-input">
                 <input type="text" class="sheet-input" name="attr_character_name" />
-                <div class="split left">
+                <hr>
+                </hr>
+                <div class="sheet-split sheet-left">
                         <div class="2colrow">
                                 <div class="col">
-                                        <label>Population</label><input type="number" name="attr_Population" placeholder="2"/>
+                                        <label>Population</label><input type="number" class="sheet-input" name="attr_Population"
+                                                placeholder="2" />
                                 </div>
                                 <div class="col">
-                                        <label>Population di</label><select name="attr_PopulationDi">
-                                                <option value = "4">d4</option>
-                                                <option value = "6">d6</option>
-                                                <option value = "8">d8</option>
-                                                <option value = "10">d10</option>
-                                                <option value = "12">d12</option>
-                                                </select>
+                                        <label>Population di</label><select class="sheet-input" name="attr_PopulationDi">
+                                                <option value="4">d4</option>
+                                                <option value="6">d6</option>
+                                                <option value="8">d8</option>
+                                                <option value="10">d10</option>
+                                                <option value="12">d12</option>
+                                        </select>
                                 </div>
                         </div>
                         <div class="2colrow">
                                 <div class="col">
-                                        <label>Law</label><input type="number" name="attr_Law" placeholder="1"/>
+                                        <label>Law</label><input type="number" class="sheet-input" class="sheet-input"
+                                                name="attr_Law" placeholder="1" />
                                 </div>
                                 <div class="col">
-                                        <label>Law Upkeep (gp/year)</label><input type="number" name="attr_LawUpkeep" placeholder="1000"/>
-                                </div>        
+                                        <label>Law Upkeep (gp/year)</label><input type="number" class="sheet-input sheet-expanding-number"
+                                                name="attr_LawUpkeep" placeholder="1000" />
+                                </div>
                         </div>
+                        <div class="2colrow">
+                                <div class="col">
+                                        <label>Development</label><input type="number" class="sheet-input" name="attr_Development"
+                                                placeholder="1" />
+                                </div>
+                                <div class="col">
+                                        <label>Unrest</label><input type="number" class="sheet-input" name="attr_Unrest"
+                                                placeholder="0" />
+                                </div>
+                        </div>
+                        <hr>
+                        </hr>
+                        <h3><b>Power Centres:</b></h3>
+                        <fieldset class="repeating_PowerCentres">
+                                <label>Name: </label><input type="text" class="resource-name sheet-input" name="attr_PowerCentreName"
+                                        placeholder="Neverwinter" />
+                                <label>Type: </label><input type="text" class="resource-type sheet-input" name="attr_PowerCentreType"
+                                        placeholder="City" />
+                        </fieldset>
+
+                        <h3><b>Resources:</b></h3>
+                        <fieldset class="repeating_resources">
+                                <label>Name: </label><input type="text" class="resource-name sheet-input" name="attr_ResourceName"
+                                        placeholder="Oak" />
+                                <label>Type: </label><input type="text" class="resource-type sheet-input" name="attr_ResourceType"
+                                        placeholder="Wood" />
+                                <label>Quantity: </label><input type="number" class="resource-quantity sheet-input"
+                                        name="attr_ResourceQuantity" placeholder="1" />
+                                <label>Value (gp): </label><input type="number" class="resource-value sheet-input sheet-input sheet-expanding-number"
+                                        name="attr_ResourceValue" placeholder="300" />
+                                <label>Source: </label><input type="text" class="resource-source sheet-input" name="attr_ResourceSource"
+                                        placeholder="The Brynn Woods" />
+                                <label>Units Traded: </label><input type="number" class="resource-source sheet-input"
+                                        name="attr_ResourceTraded" placeholder="0" />
+                                <label>Traded to: </label><input type="text" class="resource-source sheet-input" name="attr_ResourceTradePartner"
+                                        placeholder="Waterdeep" />
+                                <hr>
+                                </hr>
+                        </fieldset>
                 </div>
-                <div class="split right">
+                <div class="sheet-split sheet-right">
+                        <h3><b>Stockpile</b></h3>
+                        <div class="2colrow">
+                                <div class="col">
+                                        <label>Food:</label><input type="number" class="stockpile sheet-input" name="attr_FoodStock"
+                                                placeholder="1" />
+                                </div>
+                                <div class="col">
+                                        <label>Metal:</label><input type="number" class="stockpile sheet-input" name="attr_MetalStock"
+                                                placeholder="1" />
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col">
+                                        <label>Stone:</label><input type="number" class="stockpile sheet-input" name="attr_StoneStock"
+                                                placeholder="1" />
+                                </div>
+                                <div class="col">
+                                        <label>Wood:</label><input type="number" class="stockpile sheet-input" name="attr_WoodStock"
+                                                placeholder="1" />
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col">
+                                        <label>Exotic:</label><input type="number" class="stockpile sheet-input" name="attr_ExoticStock"
+                                                placeholder="1" />
+                                </div>
+                                <div class="col">
+                                        <label>Treasury:</label><input type="number" class="stockpile sheet-input sheet-expanding-number"
+                                                name="attr_treasury" placeholder="1" />
+                                </div>
+                        </div>
+                        <h3>Seasonal Revenue:</h3>
+                        <h3><span display:inline-block;>Tax Revenue:&nbsp;</span><span name="attr_TaxRevenue" ></span></h3>
+                        <h3><span display:inline-block;>Trade:&nbsp;</span><span name="attr_TradeValue" ></span><span>gp</span></h3>
+                        <h3><span display:inline-block;>Population assigned:&nbsp;</span><span name="attr_population_assigned"></span></h3>
+
                 </div>
+                <hr>
+                </hr>
         </div>
         <div class="sheet-province-display">
-                        <input type="text" class="sheet-input" name="attr_character_name" />
-                        <div class="split left">
+                <h2><span name="attr_character_name"></span></h2>
+                <hr>
+                </hr>
+                <div class="split left">
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Population:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Development:</h3>
+                                </div>
                         </div>
-                        <div class="split right">
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_Population"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_Development"></span></h3>
+                                </div>
                         </div>
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Law:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Unrest:</h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_Law"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_Unrest"></span></h3>
+                                </div>
+                        </div>
+                        <h3><b>Power Centres:</b></h3>
+                        <fieldset class="repeating_PowerCentres sheet-repeating-display sheet-display">
+                                <b><span name="attr_PowerCentreName"></span><span>.&nbsp;</span></b><span name="attr_PowerCentreType"></span>
+                        </fieldset>
+                        <h3><b>Resources:</b></h3>
+                        <fieldset class="repeating_resources sheet-repeating-display sheet-display">
+
+                                <input type="checkbox" class="sheet-resource" name="attr_ResourceAssigned" value="1" /><span></span>
+                                <span class="colour-change">
+                                        <b><span name="attr_ResourceName"></span></b><span>,&nbsp;</span>
+                                        <span name="attr_ResourceType"></span><span>,&nbsp;</span><span>from&nbsp;</span><span
+                                                name="attr_ResourceSource"></span><span>. Generates&nbsp;</span><span
+                                                name="attr_ResourceQuantity"></span><span>&nbsp;units per season at
+                                        </span>
+                                        <span name="attr_ResourceValue"></span><span>gp per unit.</span>
+                                </span>
+
+                        </fieldset>
+                        <h3><b>Exports:</b></h3>
+                        <fieldset class="repeating_resources sheet-repeating-display sheet-display">
+
+                        </fieldset>
                 </div>
-        
+                <div class="split right">
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Food:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Metal:</h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_FoodStock"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_MetalStock"></span></h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Stone:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Wood:</h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_StoneStock"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_WoodStock"></span></h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Exotic:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Treasury (gp):</h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_ExoticStock"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><input type="number" class="sheet-input sheet-expanding-number sheet-display-input" name="attr_treasury"></h3>
+                                </div>
+                        </div>
+                        <h3>Seasonal Revenue:</h3>
+                        <h3><span display:inline-block;>Tax:&nbsp;</span> <span name="attr_TaxRevenue"></span><span>gp</span></h3>
+                        <h3><span display:inline-block;>Trade:&nbsp;</span><span name="attr_trade_total"></span><span>gp</span></h3>
+                        <h3><span display:inline-block;>Population assigned:&nbsp;</span><span name="attr_population_assigned"></span><span>/</span><span name="attr_Population"></span></h3>
+                </div>
+                <hr>
+                </hr>
+        </div>
+
 </div>
+
+<script type="text/worker">
+        const repeatingSum = (destination, section, fields, multiplier = 1) => {
+                if (!Array.isArray(fields)) fields = [fields];
+                getSectionIDs(`repeating_${section}`, idArray => {
+                    const attrArray = idArray.reduce( (m,id) => [...m, ...(fields.map(field => `repeating_${section}_${id}_${field}`))],[]);
+                    getAttrs(attrArray, v => {
+                        console.log("===== values of v: "+ JSON.stringify(v) +" =====");
+                        const getValue = (section, id,field) => parseFloat(v[`repeating_${section}_${id}_${field}`], 10)||0; // default value of 1, so any faulty value inputs are ignored and the calculation still works.
+                        const sumTotal = idArray.reduce((total, id) => total + fields.reduce((subtotal,field) => subtotal * getValue(section, id,field),1),0);
+                        setAttrs({[destination]: sumTotal * multiplier});    
+                    });
+                });
+            };
+            
+        on('change:repeating_resources remove:repeating_resources', function() {
+                repeatingSum("trade_total", "resources", ["ResourceAssigned", "ResourceTraded", "ResourceValue"]);
+                repeatingSum("population_assigned", "resources", "ResourceAssigned");
+        });
+
+        on("change:Development change:Population sheet:opened", function() {  //sheet:opened is optional, but is useful for some workers - the script runs every time the sheet opens.
+                getAttrs(["Development","Population"], function(values) {
+                     let Development = parseInt(values.Development)||0;   // wrap this in a parseInt function if you need it to be a number
+                     let Population = parseInt(values.Population)||0;    // like so
+                        var calcValue = Development * Population * 1000
+                     setAttrs({ 
+                             TaxRevenue: calcValue                          
+                     });
+               });
+             });
+             
+</script>
 
 <rolltemplate class="sheet-rolltemplate-5eAttack">
         <div class="container">

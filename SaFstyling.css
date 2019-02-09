@@ -32,8 +32,36 @@
 	display: block;
 } 
 
+.sheet-province-input,
+.sheet-editProvinceCheckBox:checked ~ .sheet-province-display {
+	display: none;
+}
+
+.sheet-province-display,
+.sheet-editProvinceCheckBox:checked ~ .sheet-province-input {
+	display: block;
+} 
+
+
 div.sheet-containerDisplay.sheet-repeating-display .repcontainer:empty ~ b {
     display: none;
+}
+input.sheet-input.sheet-expanding-number{
+	width: 50%;
+}
+
+.sheet-display-input{
+    text-align: center;
+    border: none;
+    font-size: 12px;
+    margin-top: -1px;
+    color: gray;
+}
+
+input[type=number].sheet-display-input::-webkit-inner-spin-button, 
+input[type=number].sheet-display-input::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 input[type="checkbox"] {
@@ -48,9 +76,6 @@ input[type="checkbox"] {
     z-index: 1;
 }
 
-input.sheet-input.sheet-expanding-number{
-	width: auto;
-}
 /* Fake radio/checkbox */
 
 input[type="checkbox"] + span::before {
@@ -80,6 +105,51 @@ input[type="checkbox"] + span::before {
 input[type="checkbox"]:checked + span::before {
     color: black;
     content: "y";
+}
+
+/*Resource assigned checkbox*/
+input[type="checkbox"].sheet-resource {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+    margin: 1px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+input[type="checkbox"].sheet-resource + span::before {
+    margin-right: 4px;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    font-family:"Pictos";
+    background: transparent;
+}
+
+input[type="checkbox"].sheet-resource + span::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    top: 10px;
+    left: 10px;
+    margin-top: 3px;
+    content: "U";
+    color: gray;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+input[type="checkbox"].sheet-resource:checked + span::before {
+    color: black;
+    content: "U";
+}
+
+input[type="checkbox"].sheet-resource:not(:checked) ~ span{
+    color: gray;
 }
 
 /* Universal styling applied to all elements of these types */
@@ -320,7 +390,7 @@ input.sheet-containerStronghold + span::before {
     left: 210px;
 }
 
-input.sheet-containerProvince + span::before { left: 360px; }
+input.sheet-containerProvince + span::before { left: 361px; }
 
 input.sheet-containerStronghold:checked + span::before {
     background: #fee;
@@ -340,10 +410,10 @@ div.sheet-containerStronghold { background-color: #fcecec; }
 
 
 /* Split the screen in half */
-.split {
+.sheet-split {
     height: 100%;
     width: 50%;
-    position: fixed;
+    position: relative;
     z-index: 1;
     top: 0;
     overflow-x: hidden;
@@ -351,14 +421,20 @@ div.sheet-containerStronghold { background-color: #fcecec; }
   }
   
   /* Control the left side */
-  .left {
-    left: 0;
-    background-color: #111;
+ .sheet-left {
+    float: left;
   }
   
   /* Control the right side */
-  .right {
-    right: 0;
-    background-color: red;
-  }
+.sheet-right {
+    float: right;
+ }
   
+select {
+      width: min-content;
+}
+
+
+.sheet-header{
+      text-align: center;
+}
