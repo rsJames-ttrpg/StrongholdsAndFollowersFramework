@@ -410,8 +410,14 @@
                         <fieldset class="repeating_resources">
                                 <label>Name: </label><input type="text" class="resource-name sheet-input" name="attr_ResourceName"
                                         placeholder="Oak" />
-                                <label>Type: </label><input type="text" class="resource-type sheet-input" name="attr_ResourceType"
-                                        placeholder="Wood" />
+                                <label>Type: </label><select class="resource-type sheet-input" name="attr_ResourceType"
+                                        placeholder="Wood" >
+                                        <option value="Food">Food</option>
+                                        <option value="Metal">Metal</option>
+                                        <option value="Stone">Stone</option>
+                                        <option value="Wood">Wood</option>
+                                        <option value="Exotic">Exotic</option>
+                                        </select>
                                 <label>Quantity: </label><input type="number" class="resource-quantity sheet-input"
                                         name="attr_ResourceQuantity" placeholder="1" />
                                 <label>Value (gp): </label><input type="number" class="resource-value sheet-input sheet-input sheet-expanding-number"
@@ -425,6 +431,28 @@
                                 <hr>
                                 </hr>
                         </fieldset>
+                        <h3><b>Imports:</b></h3>
+                        <fieldset class="repeating_imports">
+                                <label>Name: </label><input type="text" class="resource-name sheet-input" name="attr_ImportName"
+                                        placeholder="Silk" />
+                                <label>Type: </label><select class="resource-type sheet-input" name="attr_ImportType"
+                                placeholder="Wood" >
+                                <option value="Food">Food</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Stone">Stone</option>
+                                <option value="Wood">Wood</option>
+                                <option value="Exotic">Exotic</option>
+                                </select>
+                                <label>Quantity: </label><input type="number" class="resource-quantity sheet-input"
+                                        name="attr_ImportQuantity" placeholder="1" />
+                                <label>Value (gp): </label><input type="number" class="resource-value sheet-input sheet-input sheet-expanding-number"
+                                        name="attr_ImportValue" placeholder="300" />
+                                <label>Source: </label><input type="text" class="resource-source sheet-input" name="attr_ImportSource"
+                                        placeholder="Neverwinter" />
+                                <hr>
+                                </hr>
+                        </fieldset>
+
                 </div>
                 <div class="sheet-split sheet-right">
                         <h3><b>Stockpile</b></h3>
@@ -459,8 +487,8 @@
                                 </div>
                         </div>
                         <h3>Seasonal Revenue:</h3>
-                        <h3><span display:inline-block;>Tax Revenue:&nbsp;</span><span name="attr_TaxRevenue" ></span></h3>
-                        <h3><span display:inline-block;>Trade:&nbsp;</span><span name="attr_TradeValue" ></span><span>gp</span></h3>
+                        <h3><span display:inline-block;>Tax Revenue:&nbsp;</span><span name="attr_TaxRevenue"></span></h3>
+                        <h3><span display:inline-block;>Trade:&nbsp;</span><span name="attr_TradeValue"></span><span>gp</span></h3>
                         <h3><span display:inline-block;>Population assigned:&nbsp;</span><span name="attr_population_assigned"></span></h3>
 
                 </div>
@@ -508,7 +536,9 @@
                         <fieldset class="repeating_PowerCentres sheet-repeating-display sheet-display">
                                 <b><span name="attr_PowerCentreName"></span><span>.&nbsp;</span></b><span name="attr_PowerCentreType"></span>
                         </fieldset>
-                        <h3><b>Resources:</b></h3>
+                        <h3><b>Resources:</b> </h3>
+                        <h3><span display:inline-block;>Population assigned:&nbsp;</span><span name="attr_population_assigned"></span><span>/</span><span
+                                name="attr_Population"></span></h3>
                         <fieldset class="repeating_resources sheet-repeating-display sheet-display">
 
                                 <input type="checkbox" class="sheet-resource" name="attr_ResourceAssigned" value="1" /><span></span>
@@ -520,11 +550,15 @@
                                         </span>
                                         <span name="attr_ResourceValue"></span><span>gp per unit.</span>
                                 </span>
-
                         </fieldset>
-                        <h3><b>Exports:</b></h3>
-                        <fieldset class="repeating_resources sheet-repeating-display sheet-display">
-
+                        <h3><b>Imports:</b></h3>
+                        <fieldset class="repeating_imports sheet-repeating-display sheet-display">
+                                <b><span name="attr_ImportName"></span></b><span>,&nbsp;</span>
+                                <span name="attr_ImportType"></span><span>,&nbsp;</span><span>from&nbsp;</span><span
+                                        name="attr_ImportSource"></span><span>. Generates&nbsp;</span><span name="attr_ImportQuantity"></span><span>&nbsp;units
+                                        per season at
+                                </span>
+                                <span name="attr_ImportValue"></span><span>gp per unit.</span>
                         </fieldset>
                 </div>
                 <div class="split right">
@@ -573,13 +607,15 @@
                                         <h3 class="header"><span name="attr_ExoticStock"></span></h3>
                                 </div>
                                 <div class="col stat-value">
-                                        <h3 class="header"><input type="number" class="sheet-input sheet-expanding-number sheet-display-input" name="attr_treasury"></h3>
+                                        <h3 class="header"><input type="number" class="sheet-input sheet-expanding-number sheet-display-input"
+                                                        name="attr_treasury"></h3>
                                 </div>
                         </div>
                         <h3>Seasonal Revenue:</h3>
                         <h3><span display:inline-block;>Tax:&nbsp;</span> <span name="attr_TaxRevenue"></span><span>gp</span></h3>
-                        <h3><span display:inline-block;>Trade:&nbsp;</span><span name="attr_trade_total"></span><span>gp</span></h3>
-                        <h3><span display:inline-block;>Population assigned:&nbsp;</span><span name="attr_population_assigned"></span><span>/</span><span name="attr_Population"></span></h3>
+                        <h3><span display:inline-block;>Trade Exports:&nbsp;</span><span name="attr_trade_total"></span><span>gp</span></h3>
+                        <h3><span display:inline-block;>Season Wood:&nbsp;</span><span name="attr_SeasonWood"></span></h3>
+                        <h3>Seasonal Outgoings:</h3>
                 </div>
                 <hr>
                 </hr>
@@ -601,9 +637,13 @@
                 });
             };
             
-        on('change:repeating_resources remove:repeating_resources', function() {
+            on('change:repeating_resources remove:repeating_resources', function() {
                 repeatingSum("trade_total", "resources", ["ResourceAssigned", "ResourceTraded", "ResourceValue"]);
                 repeatingSum("population_assigned", "resources", "ResourceAssigned");
+        });
+
+        on('change:repeating_imports remove:repeating_imports', function() {
+                repeatingSum("import_total", "imports", [ "ImportQuantity", "ImportValue"]);
         });
 
         on("change:Development change:Population sheet:opened", function() {  //sheet:opened is optional, but is useful for some workers - the script runs every time the sheet opens.
@@ -616,7 +656,38 @@
                      });
                });
              });
+
+ 
+             on('change:repeating_resources remove:repeating_resources', function () {
+                var wood = 0, stone = 0, metal = 0, exotic = 0, food = 0;
+                var tmpAssinged, tmpQuantity, tmpTraded;
+                var tmpType;
+                getSectionIDs("repeating_resources", idarray => {
+                    console.log("===== values of idarray: " + JSON.stringify(idarray) + " =====");
+                    for (var i = 0; i < idarray.length; i++) {
+                        getAttrs([`repeating_resources_${idarray[i]}_ResourceAssigned`, `repeating_resources_${idarray[i]}_ResourceType`, `repeating_resources_${idarray[i]}_ResourceQuantity`, `repeating_resources_${idarray[i]}_ResourceTraded`], function (v) {
+                            tmpAssinged = Object.values(v)[0].valueOf();
+                            tmpType = Object.values(v)[1].valueOf();
+                            tmpQuantity = Object.values(v)[2].valueOf();
+                            tmpTraded = Object.values(v)[3].valueOf();
+                            console.log("===============Assigned: " + tmpAssinged + " Type: " + tmpType + " Quantity: " + tmpQuantity + " Traded: " + tmpTraded);
+                            tmp = tmpAssinged * (tmpQuantity - tmpTraded);
+                            console.log("===============TempValue: " + tmp);
+                            console.log(tmpType == "Wood");
+                            if (tmpType == "Wood") { wood += tmp; console.log("======= Wood: " + wood); }
+                            else if (tmpType == "Stone") { stone += tmp; console.log("======= stone: " + stone); }
+                            else if (tmpType == "Metal") { metal += tmp; console.log("======= metal: " + metal); }
+                            else if (tmpType == "Exotic") { exotic += tmp; console.log("======= exotic: " + exotic); }
+                            else if (tmpType == "Food") { food += tmp; console.log("======= food: " + food); }
+                            if (i = idarray.length - 1) { setAttrs({ SeasonWood: wood, SeasonStone: stone, SeasonMetal: metal, SeasonExotic: exotic, SeasonFood: food }); }
+                        });
+                    };
+                });
+            });
              
+             
+             
+
 </script>
 
 <rolltemplate class="sheet-rolltemplate-5eAttack">
