@@ -170,6 +170,30 @@ button[type="roll"]{
     overflow: hidden;
 }
 
+button[type="action"]{
+    border: none;
+	background-color: transparent;
+	background-Image: none;
+	box-shadow: none;
+	font-size: 12px;
+	margin-top: -3px;
+	cursor: pointer;
+	display: inline-block;
+	font: Arial;
+	align-content: center;
+	padding: 0px;
+    width: auto;
+    overflow: hidden;
+}
+button[type=action]:hover {background: #eee;}
+
+h2 {
+	font-size: 2em;
+	margin-top: 0px;
+	text-align: left;
+}
+
+
 button[type=roll]::before
 {
     content: "" !important;

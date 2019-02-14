@@ -16,7 +16,13 @@ Current Features are:
 ## Stronghold tab
 * Sections for keeping track of the stronghold stats, artisans and demesne effects.
 
+## Province tab
+* Places for logging stats
+* Automatically calculated values for reseources and income.
+
+
 You can see the sheet in action in this open game https://app.roll20.net/join/4198226/jujBPA
+
 
 # Provinces 
 
@@ -44,43 +50,37 @@ How a province begins is not its fate, you can invest time money and resources t
 
 Increasing the <b>Development</b> of your province involves creating and maintaining new roads and the infrastructure to maintain communication throughout the land like stabled horses for relaying messages (or other communication methods, in a high fantasy setting stationing people who can cast sending would fill a similar role.) You must spend 10000 gp, 5 stone, wood, and metal for each level of development you are increasing to i.e. to go from development 1 to 2 you need 20000 gp and 10 stone, wood and metal. The resources and gold are subtracted from your stockpile instantly and the upgrade takes place over 2 seasons.
 
-Increasing the <b>Law</b> is a matter of investing a one time fee and then a repeating upkeep it cost 10000gp per level and the upkeep increases by 10% of the amount. For example increasing from 3 law to 4 costs 40,000gp. The upkeep of 3 Law is 6000gp per season and the upkeep of 4 law is 10,000 gp per season. See table below. 
+Increasing the <b>Law</b> is a matter of investing a one time fee and then a repeating upkeep depending on your population. The upkeep is equal to your law level x your population x 500gp See table below. 
 
 <table class="tg">
   <tr>
     <th class="tg-0lax">Law</th>
     <th class="tg-0lax">Cost (gp)</th>
-    <th class="tg-0lax">Upkeep</th>
     <th class="tg-0lax">Morale Bonus to levy</th>
   </tr>
   <tr>
     <td class="tg-0lax">1</td>
     <td class="tg-0lax">10,000</td>
-    <td class="tg-0lax">1000</td>
     <td class="tg-0lax">1</td>
   </tr>
     <tr>
     <td class="tg-0lax">2</td>
     <td class="tg-0lax">20,000</td>
-    <td class="tg-0lax">4000</td>
     <td class="tg-0lax">2</td>
   </tr>
   <tr>
     <td class="tg-0lax">3</td>
     <td class="tg-0lax">30,000</td>
-    <td class="tg-0lax">9000</td>
     <td class="tg-0lax">3</td>
   </tr>
   <tr>
     <td class="tg-0lax">4</td>
     <td class="tg-0lax">40,000</td>
-    <td class="tg-0lax">16,000</td>
     <td class="tg-0lax">4</td>
   </tr>
   <tr>
     <td class="tg-0lax">5</td>
     <td class="tg-0lax">50,000</td>
-    <td class="tg-0lax">25,000</td>
     <td class="tg-0lax">5</td>
   </tr>
 </table>
@@ -102,7 +102,7 @@ You can manually create resources based on the geography and history of the prov
 
 <table class="tg">
   <tr>
-    <th class="tg-0lax">d100</th>
+    <th class="tg-0lax" style="align-centre">d100</th>
     <th class="tg-0lax">Resource</th>
     <th class="tg-0lax">Quantity</th>
     <th class="tg-0lax">Value per unit (x100gp)</th>
@@ -111,7 +111,7 @@ You can manually create resources based on the geography and history of the prov
   <tr>
     <td class="tg-0lax">00-40</td>
     <td class="tg-0lax">Food</td>
-    <td class="tg-0lax">2d4</td>
+    <td class="tg-0lax">1d6</td>
     <td class="tg-0lax">d4</td>
     <td class="tg-0lax">1000gp per level</td>
   </tr>
@@ -132,7 +132,7 @@ You can manually create resources based on the geography and history of the prov
     <tr>
     <td class="tg-0lax">76-95</td>
     <td class="tg-0lax">Wood</td>
-    <td class="tg-0lax">2d6</td>
+    <td class="tg-0lax">1d6</td>
     <td class="tg-0lax">d6</td>
     <td class="tg-0lax">2000gp per level</td>
   </tr>
@@ -152,6 +152,48 @@ If you want to completely randomly create a province then choose how abundant re
 
 After determining the resources you place them on a map, or not on a map your choice. Then you decide how the power structure works in your province whether it is centrally administered in a capital or spread throughout many towns as an organisation. Fortifying power centres with strongholds is probably a good idea.
 
+## Spending your Resources
+
+As a leader of a province you can establish new strongholds. As you have ready access to command workers and a stockpile of materials you may expend those rather than gold. A list of tyhe cost of each stronghold type is provided below.
+
+<table class="tg">
+  <tr>
+    <th class="tg-0lax">Type</th>
+    <th class="tg-0lax">Wood cost</th>
+    <th class="tg-0lax">Stone cost</th>
+    <th class="tg-0lax">Metal cost</th>
+    <th class="tg-0lax">Exotic cost</th>
+  </tr>
+      <tr>
+    <td class="tg-0lax">Keep</td>
+    <td class="tg-0lax">100</td>
+    <td class="tg-0lax">200</td>
+    <td class="tg-0lax">150</td>
+    <td class="tg-0lax">50</td>
+  </tr>
+        <tr>
+    <td class="tg-0lax">Temple</td>
+    <td class="tg-0lax">100</td>
+    <td class="tg-0lax">250</td>
+    <td class="tg-0lax">100</td>
+    <td class="tg-0lax">150</td>
+  </tr>
+        <tr>
+    <td class="tg-0lax">Ship</td>
+    <td class="tg-0lax">300</td>
+    <td class="tg-0lax">50</td>
+    <td class="tg-0lax">150</td>
+    <td class="tg-0lax">25</td>
+  </tr>
+        <tr>
+    <td class="tg-0lax">Establishment</td>
+    <td class="tg-0lax">100</td>
+    <td class="tg-0lax">50</td>
+    <td class="tg-0lax">100</td>
+    <td class="tg-0lax">175</td>
+  </tr>
+</table>
+
 ### Beginning of the Season
 
 You assign your population to work resources. Remember you need to produce enough food to feed the people in order to keep unrest low and I suppose the people fed.
@@ -168,7 +210,7 @@ Calculate any money generated by trade and add to the treasury.
 
 #### Taxes
 
-The amount of tax you can levy from the population is proportional to the development of the province. population x development x 1000gp. You can issue a decree to increase taxes for a season however this incurrs an unrest check with a dc of 10 + population + 1 for every 10% tax increase. For example if you increase your tax by 30% and you have a population of 4 you have to make a DC 17 unrest check, 10 + 4 from population and 3 from your law. An unrest check is a 1d20 + law + development.
+The amount of tax you can levy from the population is proportional to the development of the province. population x development x 500gp. You can issue a decree to increase taxes for a season however this incurrs an unrest check with a dc of 10 + population + 1 for every 10% tax increase. For example if you increase your tax by 30% and you have a population of 4 you have to make a DC 17 unrest check, 10 + 4 from population and 3 from your law. An unrest check is a 1d20 + law + development.
 
 Calculate the taxes and add to the treasury.
 
@@ -179,3 +221,4 @@ Roll for you population increase, your population di + any food modifiers you wi
 If your unrest is greater than your law + development then the province is in rebellion, all food resources are worked no stockpiles are generated, taxes are not collected. Unrest decreases by one every season as long as the food generated is greater than the population.
 
 Subtract any yearly outgoings such as law upkeep and the upkeep for maintenance of your province infrastructure 1000gp x development level.
+

@@ -367,13 +367,10 @@
                                                 placeholder="2" />
                                 </div>
                                 <div class="col">
-                                        <label>Population di</label><select class="sheet-input" name="attr_PopulationDi">
-                                                <option value="4">d4</option>
-                                                <option value="6">d6</option>
-                                                <option value="8">d8</option>
-                                                <option value="10">d10</option>
-                                                <option value="12">d12</option>
-                                        </select>
+                                        <div class="col">
+                                                <label>Development</label><input type="number" class="sheet-input" name="attr_Development"
+                                                        placeholder="1" />
+                                        </div>
                                 </div>
                         </div>
                         <div class="2colrow">
@@ -382,19 +379,10 @@
                                                 name="attr_Law" placeholder="1" />
                                 </div>
                                 <div class="col">
-                                        <label>Law Upkeep (gp/year)</label><input type="number" class="sheet-input sheet-expanding-number"
-                                                name="attr_LawUpkeep" placeholder="1000" />
-                                </div>
-                        </div>
-                        <div class="2colrow">
-                                <div class="col">
-                                        <label>Development</label><input type="number" class="sheet-input" name="attr_Development"
-                                                placeholder="1" />
-                                </div>
-                                <div class="col">
                                         <label>Unrest</label><input type="number" class="sheet-input" name="attr_Unrest"
                                                 placeholder="0" />
                                 </div>
+
                         </div>
                         <hr>
                         </hr>
@@ -487,10 +475,54 @@
                                 </div>
                         </div>
                         <h3>Seasonal Revenue:</h3>
-                        <h3><span display:inline-block;>Tax Revenue:&nbsp;</span><span name="attr_TaxRevenue"></span></h3>
-                        <h3><span display:inline-block;>Trade:&nbsp;</span><span name="attr_TradeValue"></span><span>gp</span></h3>
-                        <h3><span display:inline-block;>Population assigned:&nbsp;</span><span name="attr_population_assigned"></span></h3>
-
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Food:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Metal:</h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonFood"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonMetal"></span></h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Stone:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Wood:</h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonStone"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonWood"></span></h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Exotic:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Income (gp):</h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonExotic"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonRevenue"></span></h3>
+                                </div>
+                        </div>
                 </div>
                 <hr>
                 </hr>
@@ -540,8 +572,12 @@
                         <h3><span display:inline-block;>Population assigned:&nbsp;</span><span name="attr_population_assigned"></span><span>/</span><span
                                         name="attr_Population"></span></h3>
                         <fieldset class="repeating_resources sheet-repeating-display sheet-display">
-
-                                <input type="checkbox" class="sheet-resource" name="attr_ResourceAssigned" value="1" /><span></span>
+                                <select class="sheet-input" name="attr_ResourceAssigned">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                </select>
                                 <span class="colour-change">
                                         <b><span name="attr_ResourceName"></span></b><span>,&nbsp;</span>
                                         <span name="attr_ResourceType"></span><span>,&nbsp;</span><span>from&nbsp;</span><span
@@ -614,63 +650,66 @@
                         <h3>Seasonal Revenue:</h3>
 
                         <div class="2colrow">
-                                        <div class="col stat-head">
-                                                <h3 class="header">Food:</h3>
-                                        </div>
-                                        <div class="col stat-head">
-                                                <h3 class="header">Metal:</h3>
-                                        </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Food:</h3>
                                 </div>
-                                <div class="2colrow">
-                                        <div class="col stat-value">
-                                                <h3 class="header"><span name="attr_SeasonFood"></span></h3>
-                                        </div>
-                                        <div class="col stat-value">
-                                                <h3 class="header"><span name="attr_SeasonMetal"></span></h3>
-                                        </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Metal:</h3>
                                 </div>
-                                <div class="2colrow">
-                                        <div class="col stat-head">
-                                                <h3 class="header">Stone:</h3>
-                                        </div>
-                                        <div class="col stat-head">
-                                                <h3 class="header">Wood:</h3>
-                                        </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonFood"></span></h3>
                                 </div>
-                                <div class="2colrow">
-                                        <div class="col stat-value">
-                                                <h3 class="header"><span name="attr_SeasonStone"></span></h3>
-                                        </div>
-                                        <div class="col stat-value">
-                                                <h3 class="header"><span name="attr_SeasonWood"></span></h3>
-                                        </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonMetal"></span></h3>
                                 </div>
-                                <div class="2colrow">
-                                        <div class="col stat-head">
-                                                <h3 class="header">Exotic:</h3>
-                                        </div>
-                                        <div class="col stat-head">
-                                                <h3 class="header">Income (gp):</h3>
-                                        </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Stone:</h3>
                                 </div>
-                                <div class="2colrow">
-                                        <div class="col stat-value">
-                                                <h3 class="header"><span name="attr_SeasonExotic"></span></h3>
-                                        </div>
-                                        <div class="col stat-value">
-                                                        <h3 class="header"><span name="attr_SeasonRevenue"></span></h3>
-                                        </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Wood:</h3>
                                 </div>
-        
-        
-
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonStone"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonWood"></span></h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-head">
+                                        <h3 class="header">Exotic:</h3>
+                                </div>
+                                <div class="col stat-head">
+                                        <h3 class="header">Income (gp):</h3>
+                                </div>
+                        </div>
+                        <div class="2colrow">
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonExotic"></span></h3>
+                                </div>
+                                <div class="col stat-value">
+                                        <h3 class="header"><span name="attr_SeasonRevenue"></span></h3>
+                                </div>
+                        </div>
+                        <button class="sheet-button-roll sheet-stockpile-button" type='action' value='&{template:5eAttack} {{name=@{character_name}}}{{subtags=Adding to Stockpile}}'
+                                name='act_EndSeason'>
+                                <h3>Add to Stockpile</h3>
+                        </button>
+                        <h3>End of year:</h3>
+                        Pay law
+                        population increase chance
                 </div>
         </div>
         <hr>
         </hr>
 </div>
 
-</div>
 
 <script type="text/worker">
         const repeatingSum = (destination, section, fields, multiplier = 1) => {
@@ -699,12 +738,23 @@
                 getAttrs(["Development","Population"], function(values) {
                      let Development = parseInt(values.Development)||0;   // wrap this in a parseInt function if you need it to be a number
                      let Population = parseInt(values.Population)||0;    // like so
-                        var calcValue = Development * Population * 1000
+                        var calcValue = Development * Population * 500
                      setAttrs({ 
                              TaxRevenue: calcValue                          
                      });
                });
              });
+             on("change:Law change:Population", function() {  //sheet:opened is optional, but is useful for some workers - the script runs every time the sheet opens.
+                getAttrs(["Law","Population"], function(values) {
+                     let Law = parseInt(values.Law)||0;   // wrap this in a parseInt function if you need it to be a number
+                     let Population = parseInt(values.Population)||0;    // like so
+                        var calcValue = Law * Population * 500
+                     setAttrs({ 
+                             LawUpkeep: calcValue                          
+                     });
+               });
+             });
+            
              /*get seasonal resources*/
              on('change:repeating_resources remove:repeating_resources', function () {
                  var wood = 0, stone = 0, metal = 0, exotic = 0, food = 0;
@@ -717,7 +767,8 @@
                              tmpType = Object.values(v)[1].valueOf();
                              tmpQuantity = Object.values(v)[2].valueOf();
                              tmpTraded = Object.values(v)[3].valueOf();
-                             tmp = tmpAssinged * (tmpQuantity - tmpTraded);
+                             tmp = ((tmpAssinged * tmpQuantity) - tmpTraded);
+                             if (tmp < 0){tmp = 0}            
                              if (tmpType == "Wood") { wood += tmp;  }
                              else if (tmpType == "Stone") { stone += tmp; }
                              else if (tmpType == "Metal") { metal += tmp;  }
@@ -796,7 +847,27 @@
                 });
             });
             });
-</script>
+
+            on("clicked:EndSeason", function(){
+                getAttrs(["Population", "FoodStock", "MetalStock", "StoneStock","WoodStock","ExoticStock","treasury", "SeasonFood", "SeasonMetal", "SeasonStone","SeasonWood","SeasonExotic","SeasonRevenue"], function (values) {
+                    let food = (parseInt(values.FoodStock) || 0) + (parseInt(values.SeasonFood) || 0) - (parseInt(values.Population) || 0);
+                    let metal = (parseInt(values.MetalStock) || 0) + (parseInt(values.SeasonMetal) || 0);
+                    let stone = (parseInt(values.StoneStock) || 0) + (parseInt(values.SeasonStone) || 0);
+                    let wood = (parseInt(values.WoodStock) || 0) + (parseInt(values.SeasonWood) || 0);
+                    let exotic = (parseInt(values.ExoticStock) || 0) + (parseInt(values.SeasonExotic) || 0);
+                    let money = (parseInt(values.treasury) || 0) + (parseInt(values.SeasonRevenue) || 0);
+                    setAttrs({
+                     FoodStock : food,
+                     MetalStock : metal,
+                     StoneStock : stone,
+                     WoodStock : wood,
+                     ExoticStock : exotic,
+                     treasury : money
+                });
+            });
+            });
+
+        </script>
 
 <rolltemplate class="sheet-rolltemplate-5eAttack">
         <div class="container">
